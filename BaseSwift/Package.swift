@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "BaseSwift",
     platforms: [
-        .iOS(.v12)
+        .iOS(.v12), .macOS(.v10_13)
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
@@ -19,7 +19,6 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
         .package(url: "https://github.com/Moya/Moya.git", .upToNextMajor(from: "14.0.0")),
         .package(url: "https://github.com/tristanhimmelman/ObjectMapper.git", .upToNextMajor(from: "4.1.0")),
-        .package(url: "https://github.com/devicekit/DeviceKit.git", from: "4.0.0"),
         .package(url: "https://github.com/melvitax/DateHelper.git", from: "4.5.2")
     ],
     targets: [
@@ -27,7 +26,9 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "BaseSwift",
-            dependencies: []),
+            dependencies: ["Moya",
+            "ObjectMapper",
+            "DateHelper"]),
         .testTarget(
             name: "BaseSwiftTests",
             dependencies: ["BaseSwift"])

@@ -20,15 +20,6 @@
         }
       },
       {
-        "package": "DeviceKit",
-        "repositoryURL": "https://github.com/devicekit/DeviceKit.git",
-        "state": {
-          "branch": null,
-          "revision": "70f1564e4218f0b68b73a4a795cb31aee5696f08",
-          "version": "4.4.0"
-        }
-      },
-      {
         "package": "Logger",
         "repositoryURL": "https://github.com/shibapm/Logger",
         "state": {
