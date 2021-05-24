@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 #endif
 
-protocol ScreenNearlyHandler: class {
+protocol ScreenNearlyHandler: AnyObject {
     /// Index of controller which is nearly with current controller
     ///
     /// - Parameter type: Type of current controller
