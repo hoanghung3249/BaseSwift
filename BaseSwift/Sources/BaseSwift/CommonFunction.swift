@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 import Alamofire
 
 struct CommonFunction {
@@ -80,3 +79,4 @@ func replaceRootViewController(_ controller: UIViewController, animated: Bool = 
         UIView.setAnimationsEnabled(oldState)
     }, completion: nil)
 }
+#endif

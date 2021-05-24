@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 // MARK: - Go Back Action
 extension UIViewController {
@@ -48,3 +47,4 @@ extension UIViewController {
         viewController.removeFromParent()
     }
 }
+#endif

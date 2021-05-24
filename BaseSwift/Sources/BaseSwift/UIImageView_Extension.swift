@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 // MARK: - Generic Property
 public class Property<T: Any> {
@@ -253,3 +252,4 @@ extension UIImageView {
     }
 
 }
+#endif

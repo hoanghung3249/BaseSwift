@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 protocol Reusable {
     static var reuseID: String {get}
@@ -159,3 +158,4 @@ extension URL {
         }
     }
 }
+#endif

@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 extension UITextField {
     func setLeftInset(_ value: CGFloat, mode: UITextField.ViewMode = .always) {
@@ -95,3 +94,4 @@ extension UITextField {
         self.tintColor = .lightGray
     }
 }
+#endif

@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 extension UIView {
 
@@ -180,3 +179,4 @@ extension UIView {
         }
     }
 }
+#endif

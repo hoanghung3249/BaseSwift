@@ -6,9 +6,8 @@
 //
 
 import Foundation
-#if canImport(UIKit)
+#if canImport(UIKit) && os(iOS)
 import UIKit
-#endif
 
 protocol ScreenNearlyHandler: AnyObject {
     /// Index of controller which is nearly with current controller
@@ -62,3 +61,4 @@ extension ScreenNearlyHandler where Self: UIViewController {
         navigationController?.popToViewController(controller, animated: true)
     }
 }
+#endif
