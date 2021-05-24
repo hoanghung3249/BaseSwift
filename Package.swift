@@ -29,7 +29,7 @@ let package = Package(
             dependencies: ["Moya",
             "ObjectMapper",
             "DateHelper"],
-            path: "Source"),
+            path: "Source/BaseSwift"),
         .testTarget(
             name: "BaseSwiftTests",
             dependencies: ["BaseSwift"])
