@@ -9,7 +9,7 @@ import Foundation
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-extension UITextField {
+public extension UITextField {
     func setLeftInset(_ value: CGFloat, mode: UITextField.ViewMode = .always) {
         let insetView = UIView(frame: CGRect(x: 0, y: 0, width: value, height: self.frame.size.height))
         leftView = insetView

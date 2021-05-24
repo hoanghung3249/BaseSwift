@@ -9,7 +9,7 @@ import Foundation
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-extension UIView {
+public extension UIView {
 
     func constrainToEdges(_ subview: UIView, insets: UIEdgeInsets = .zero) {
         
@@ -123,7 +123,7 @@ extension UIView {
         NSLayoutConstraint.activate(constraints)
     }
     
-    internal enum Corner {
+    enum Corner {
         case topLeft, topRight, bottomLeft, bottomRight
     }
     
@@ -158,7 +158,7 @@ extension UIView {
 }
 
 // MARK: - Constraints
-extension UIView {
+public extension UIView {
     /// Retrieves all constraints that mention the view
     func getAllConstraints() -> [NSLayoutConstraint] {
         // array will contain self and all superviews

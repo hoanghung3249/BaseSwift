@@ -9,7 +9,7 @@ import Foundation
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-protocol ScreenNearlyHandler: AnyObject {
+public protocol ScreenNearlyHandler: AnyObject {
     /// Index of controller which is nearly with current controller
     ///
     /// - Parameter type: Type of current controller
@@ -34,7 +34,7 @@ protocol ScreenNearlyHandler: AnyObject {
     func popToNearly<T: UIViewController>(type: T.Type)
 }
 
-extension ScreenNearlyHandler where Self: UIViewController {
+public extension ScreenNearlyHandler where Self: UIViewController {
     func indexOfScreenNearly<T: UIViewController>(_ type: T.Type) -> Int? {
         guard let index = navigationController?.viewControllers.lastIndex(of: self), index > 0 else { return nil }
         

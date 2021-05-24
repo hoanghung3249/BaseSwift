@@ -23,7 +23,7 @@ public class Property<T: Any> {
 }
 
 // MARK: - UIImageView Shape Extension
-extension UIImageView {
+public extension UIImageView {
     private static var isAnimationEnabled = Property<Bool>()
     
     /// Enable or Disable animation when shape is drawing
@@ -95,7 +95,7 @@ extension UIImageView {
     }
 }
 // MARK: - UIImageView GeometryConvesion Extension
-extension UIImageView {
+public extension UIImageView {
     
     func convertPoints(fromImagePoints imagePoints: [CGPoint]) -> [CGPoint] {
         var newPoints = [CGPoint]()

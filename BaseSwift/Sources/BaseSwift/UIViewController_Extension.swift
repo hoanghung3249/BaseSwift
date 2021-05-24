@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // MARK: - Go Back Action
-extension UIViewController {
+public extension UIViewController {
     @objc func goBack() {
         if navigationController != nil { popController() }
         dismissController()
@@ -28,7 +28,7 @@ extension UIViewController {
 }
 
 // MARK: - ChildViewController
-extension UIViewController {
+public extension UIViewController {
     func addViewController(_ viewController: UIViewController, containerView: UIView, useConstraints: Bool = false) {
         addChild(viewController)
         containerView.addSubview(viewController.view)

@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension String {
+public extension String {
     public func base64Decoded() -> String? {
         print("decode base64")
 

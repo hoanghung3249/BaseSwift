@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-struct CommonFunction {
+public struct CommonFunction {
 
     static func isConnectedToInternet() -> Bool {
         return NetworkReachabilityManager()?.isReachable ?? false
@@ -42,14 +42,14 @@ struct CommonFunction {
 }
 
 // MARK: - Current ViewController
-var currentViewController: UIViewController? {
+public var currentViewController: UIViewController? {
     if let topController = UIApplication.shared.keyWindow?.rootViewController {
         return topViewController(topController)
     }
     return nil
 }
 
-func topViewController(_ viewController: UIViewController) -> UIViewController {
+public func topViewController(_ viewController: UIViewController) -> UIViewController {
     if let nav = viewController as? UINavigationController {
         return topViewController(nav.visibleViewController!)
     }
@@ -66,7 +66,7 @@ func topViewController(_ viewController: UIViewController) -> UIViewController {
 
 // MARK: - Replace screen
 
-func replaceRootViewController(_ controller: UIViewController, animated: Bool = false) {
+public func replaceRootViewController(_ controller: UIViewController, animated: Bool = false) {
     guard let window = UIApplication.shared.keyWindow else { fatalError("Cannot find out keyWindow") }
     if !animated {
         window.rootViewController = controller

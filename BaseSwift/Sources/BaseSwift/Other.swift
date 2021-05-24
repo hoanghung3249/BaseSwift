@@ -9,12 +9,12 @@ import Foundation
 #if canImport(UIKit) && os(iOS)
 import UIKit
 
-protocol Reusable {
+public protocol Reusable {
     static var reuseID: String {get}
 }
 
 extension Reusable {
-    static var reuseID: String {
+    public static var reuseID: String {
         return String(describing: self)
     }
 }
@@ -24,7 +24,7 @@ extension UICollectionViewCell: Reusable {}
 
 extension UIViewController: Reusable {}
 
-extension UITableView {
+public extension UITableView {
     /// Register a UITableViewCell which using a nib file
     ///
     /// - Parameter cell: Type of UITableViewCell class
@@ -55,7 +55,7 @@ extension UITableView {
     }
 }
 
-extension UICollectionView {
+public extension UICollectionView {
     /// Register a UICollectionViewCell which using a nib file
     ///
     /// - Parameter cell: Type of UICollectionViewCell class
@@ -78,7 +78,7 @@ extension UICollectionView {
     }
 }
 
-extension NSObject {
+public extension NSObject {
     var className: String {
         return String(describing: type(of: self))
     }
@@ -88,7 +88,7 @@ extension NSObject {
     }
 }
 
-extension UINib {
+public extension UINib {
     static func instantiate<T: UIView>(_ type: T.Type) -> UINib {
         return UINib.init(nibName: type.className, bundle: .main)
     }
@@ -100,13 +100,13 @@ extension UINib {
     
 }
 
-extension UIApplication {
+public extension UIApplication {
     static var appVersion: String? {
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String
     }
 }
 
-extension UILabel {
+public extension UILabel {
     func textWidth() -> CGFloat {
         return UILabel.textWidth(label: self)
     }
@@ -142,7 +142,7 @@ public extension Collection {
     }
 }
 
-extension URL {
+public extension URL {
     func params() -> [String:Any] {
         var dict = [String:Any]()
 
