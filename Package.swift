@@ -28,7 +28,8 @@ let package = Package(
             name: "BaseSwift",
             dependencies: ["Moya",
             "ObjectMapper",
-            "DateHelper"]),
+            "DateHelper"],
+            path: "Source"),
         .testTarget(
             name: "BaseSwiftTests",
             dependencies: ["BaseSwift"])
