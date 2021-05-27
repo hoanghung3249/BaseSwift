@@ -128,17 +128,26 @@ public extension UILabel {
     }
 }
 
-public extension Collection {
-    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-    subscript (safe index: Index) -> Element? {
-        var i = self.startIndex
-        while i != self.endIndex {
-            if i == index {
-                return self[index]
+public extension Array {
+    /// Get or set an element at the specified index if it is within bounds, otherwise nil.
+    subscript (safe index: Index?) -> Element? {
+        get {
+            guard let index = index else { return nil }
+            var i = self.startIndex
+            while i != self.endIndex {
+                if i == index { return self[index] }
+                i = self.index(after: i)
             }
-            i = self.index(after: i)
+            return nil
         }
-        return nil
+        set(newValue) {
+            guard let index = index, let newValue = newValue else { return }
+            var i = self.startIndex
+            while i != self.endIndex {
+                if i == index { self[index] = newValue }
+                i = self.index(after: i)
+            }
+        }
     }
 }
 
