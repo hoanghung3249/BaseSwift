@@ -8,6 +8,10 @@
 import Foundation
 
 public extension String {
+    public func base64Encoded() -> String? {
+        return data(using: .utf8)?.base64EncodedString()
+    }
+    
     public func base64Decoded() -> String? {
         print("decode base64")
 

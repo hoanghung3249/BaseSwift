@@ -20,7 +20,7 @@ struct Base64EncryptedString {
             value?.base64Decoded()
         }
         set {
-            value = newValue?.base64Decoded()
+            value = newValue?.base64Encoded()
         }
     }
 }
